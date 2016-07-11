@@ -66,6 +66,6 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
    config.vm.provision "shell", inline: <<-SHELL
      mkdir -p /app
-     apt-get install -y apache2
+     ansible-playbook -c local /app/playbook.yml
    SHELL
 end
